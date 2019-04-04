@@ -1,4 +1,4 @@
-my_dict={"j":1, "k":2, "l":3}
+my_dict={"g":1, "r":2, "b":3}
 
 try:
 	value=my_dict["m"]
