@@ -1,18 +1,15 @@
-class MyBoxIterator():
-	def __init__(self):
-		self.b = 1
+class MyBoxIterator:
+	def __init__(self, b):
+		self.b= b
+		self.ind=0
 
 	def __iter__(self):
 		return self
 
 	def __next__(self):
-		if self.b <= 5:
-			c = self.b
-			self.b += 1
-			return c
+		if self.ind<len(self.b):
+			item = self.b[self.ind]
+			self.ind += 1
+			return item
 		else:
-			raise StopIteration
-if __name__ == "__main__":
-	L = MyBoxIterator()
-	for item in L:
-		print(item)     
+			raise StopIteration   

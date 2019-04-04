@@ -1,6 +1,15 @@
 from mybox import MyBox
 from myboxiterator import MyBoxIterator
 
-box1=MyBox()
-box1.add(1)
-box1.add("Error I dont't know")
+box=MyBox()
+box.add(1)
+box.add('2')
+box.add(3.5)
+box.add('box')
+box.add(6)
+box.add('resolved')
+box.remove('2')
+if ('first' in box) and (len(box)>0):
+    box.remove('first')
+for i in box:
+    print(i)

@@ -1,31 +1,22 @@
-from myclass import Color
-class MyBox:
-    def __init__( self ):
-        self._theItems =list()
+from myboxiterator import MyBoxIterator
 
-    def __len__( self ):
-        return len( self._theItems )
+class MyBox():
+    def __init__(self):
+        self.points=list()
 
-    def add( self, item ):
-        self._theItems.append( item )
+    def __len__(self):
+        return len(self.points )
 
-    def remove( self, item ):
-        assert item in self._theItems # precondition
-        idx = self._theItems.index( item )
-        return self._theItems.pop( idx )
+    def add(self, point):
+        self.points.append(point)
 
-    def __contains__( self, item ):
-        return item in self._theItems
+    def remove(self, point):
+        assert point in self.points
+        ind = self.points.index(point)
+        return self.points.pop(ind)
 
-    def __iter__( self, item ):
-        return MyBoxIterator(self._theItems)
+    def __contains__(self, point):
+        return point in self.points
 
-color1=Color()
-color1.calculate()
-color1.changecolor(13,16,25)
-
-color1.calculate()
-
-
-
-
+    def __iter__(self):
+        return MyBoxIterator(self.points)
